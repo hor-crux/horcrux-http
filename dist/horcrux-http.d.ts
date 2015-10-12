@@ -9,6 +9,7 @@ declare module "horcrux-http" {
     private options;
     constructor(url: string, options?: HttpOptions);
     send(method: string, data?: any): Promise<any>;
+    private payload(data);
     private response();
 }
  let METHOD: {

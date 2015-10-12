@@ -44,8 +44,17 @@ class Ajax {
 			if(this.options.contentType)
 				this.xhttp.setRequestHeader("Content-type", this.options.contentType);
 			
-			!!data ? this.xhttp.send(data) : this.xhttp.send();
+			!!data ? this.xhttp.send(this.payload(data)) : this.xhttp.send();
 		});
+	}
+	
+	private payload(data:any): string {
+		if(typeof data === "object")
+			return JSON.stringify(data);
+		else if(data instanceof Array)
+			return JSON.stringify(data);
+		else
+			return data;
 	}
 	
 	private response(): any {
