@@ -27,6 +27,7 @@ class Ajax {
 				}
 			}
 			
+			//detect options based on data.
 			if(!!data) {
 				if(!this.options.contentType) {
 					if(typeof data === "object") {
@@ -38,10 +39,11 @@ class Ajax {
 				}
 			} 
 			
+			this.xhttp.open(method, this.url, true);
+			
 			if(this.options.contentType)
 				this.xhttp.setRequestHeader("Content-type", this.options.contentType);
 			
-			this.xhttp.open(method, this.url, true);
 			!!data ? this.xhttp.send(data) : this.xhttp.send();
 		});
 	}
