@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "main": "dist/horcrux-http",
   "jspm": {
+    "registry": "github",
+    "directories": {
+      "lib": "dist"
+    },
     "dependencies": {
       "horcrux-core": "github:hor-crux/horcrux-core@master"
     },
